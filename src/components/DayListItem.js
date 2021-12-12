@@ -11,7 +11,7 @@ export default function DayListItem(props) {
       const formatSpots = (numOfSpots) => {
         switch(numOfSpots) {
           case 0:
-            return 'no more spots remaining';
+            return 'no spots remaining';
           case 1:
             return '1 spot remaining';
           default:
