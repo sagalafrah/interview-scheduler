@@ -129,8 +129,9 @@ const interviewers = [
           />
         ))
         .add("Clickable", () => (
-          <InterviewerList
-            interviewers={interviewers}
-            setInterviewer={action("setInterviewer")}
+          <InterviewerListItem
+            name={interviewer.name}
+            avatar={interviewer.avatar}
+            setInterviewer={() => action("setInterviewer")(interviewer.id)}
           />
         ));
