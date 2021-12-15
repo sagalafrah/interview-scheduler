@@ -7,6 +7,7 @@ import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
 import "index.scss";
 import Appointment from "components/appointment/index.js";
+import header from "components/appointment/header";
 
 import Button from "components/Button";
 
@@ -149,3 +150,11 @@ const interviewers = [
   })
   .add("Appointment", () => <Appointment />)
   .add("Appointment with Time", () => <Appointment time="12pm" />);
+
+  storiesOf("Appointment", module)
+  .addParameters({
+    backgrounds: [{ name: "white", value: "#fff", default: true }]
+  })
+  .add("Appointment", () => <Appointment />)
+  .add("Appointment with Time", () => <Appointment time="12pm" />)
+  .add("header", () => <header time="12pm" />);
