@@ -10,7 +10,7 @@ import Appointment from "components/appointment/index.js";
 import header from "components/appointment/header.js";
 import Empty from "components/appointment/empty.js";
 import Show from "components/appointment/show.js";
-
+import Confirm from "components/appointment/confirm.js";
 import Button from "components/Button";
 
 storiesOf("Button", module)
@@ -167,5 +167,12 @@ const interviewers = [
       interviewer={interviewer}
       onEdit={action("onEdit")}
       onDelete={action("onDelete")}
+    />
+  ))
+  .add("Confirm", () => (
+    <Confirm
+      message="Delete the appointment?"
+      onCancel={action("onCancel")}
+      onConfirm={action("onConfirm")}
     />
   ))
