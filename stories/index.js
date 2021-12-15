@@ -13,6 +13,7 @@ import Show from "components/appointment/show.js";
 import Confirm from "components/appointment/confirm.js";
 import Button from "components/Button";
 import Status from "components/appointment/status.js";
+import Error from "components/appointment/error.js";
 
 storiesOf("Button", module)
   .addParameters({
@@ -178,3 +179,6 @@ const interviewers = [
     />
   ))
   .add("Status", () => <Status message="Deleting" />)
+  .add("Error", () => (
+    <Error message="Could not delete appointment." onClose={action("onClose")} />
+  ))
