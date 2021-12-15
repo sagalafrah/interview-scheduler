@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Button from "../Button";
 import InterviewerList from "../InterviewerList";
@@ -8,25 +8,23 @@ export default function Form(props) {
     <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">
     <form autoComplete="off">
-      <input
-        className="appointment__create-input text--semi-bold"
-        name="name"
-        type="text"
-        placeholder="Enter Student Name"
-        /*
-          This must be a controlled component
-          your code goes here
-        */
-      />
+    <input
+            className="appointment__create-input text--semi-bold"
+            name="name"
+            type="text"
+            placeholder="Enter Student Name"
+            value={props.name}
+          />
     </form>
     <InterviewerList 
-      /* your code goes here */
-    />
+          interviewers={props.interviewers} 
+          value={props.interviewer} 
+        />
   </section>
   <section className="appointment__card-right">
     <section className="appointment__actions">
-      <Button danger {/* your code goes here */}>Cancel</Button>
-      <Button confirm {/* your code goes here */}>Save</Button>
+    <Button danger onClick={props.onCancel}>Cancel</Button>
+    <Button confirm onClick={props.onSave}>Save</Button>
     </section>
   </section>
 </main>
