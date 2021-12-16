@@ -4,14 +4,14 @@ export const getAppointmentsForDay = (state, day) => {
     if (!dayObj) {
       return [];
     }
-  const appointmentID = dayObj.appointments;
-  const appointmentsForEachDay = [];
+    const appointmentID = dayObj.appointments;
+    const appointmentsForEachDay = [];
   
     for (const id in state.appointments) {
       if (appointmentID.includes(Number(id))) {
         appointmentsForEachDay.push(state.appointments[id]);
       }
     }
-  
     return appointmentsForEachDay;
   };
+  
