@@ -10,17 +10,24 @@ export default function Application(props) {
   const [state, setState] = useState({
     day: "Monday",
     days: [],
-    appointments: {}
+    appointments: {},
+    interviewers: {}
+
   })
   const setDay = day => setState(state => ({...state, day}));
   useEffect(() => {
+    console.log('useEffect')
     Promise.all([
-      axios.get("/api/days"),
-      axios.get("/api/appointments")
+      axios.get("http://localhost:8001/api/days"),
+      axios.get("http://localhost:8001/api/appointments"),
+      axios.get("http://localhost:8001/api/interviewers")
     ]).then(all => {
-      setState(state => ({...state, days: all[0].data, appointments: all[1].data}));
+      console.log('Request was successful')
+      setState(state => ({...state, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
     })
+    .catch((error)=>{console.log('Error', error)});
   }, []);
+
   const appointmentsForEachDay = getAppointmentsForDay(state, state.day);
 
   return (
