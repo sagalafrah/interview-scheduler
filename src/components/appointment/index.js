@@ -3,8 +3,12 @@ import Header from "./header";
 import Show from "./show";
 import Empty from "./empty";
 
+
 import "./styles.scss";
 
+
+const EMPTY = "EMPTY";
+const SHOW = "SHOW";
 
 
 
