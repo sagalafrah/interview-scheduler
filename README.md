@@ -23,7 +23,7 @@ Appointment
 Deleting Appointments
 
 !["Deleting"](https://github.com/sagalafrah/interview-scheduler/blob/master/docs/deleteconfirm.png)
-!["Deleting"](https://github.com/sagalafrah/interview-scheduler/blob/master/docs/delete.png)
+!["Deleting"](https://github.com/sagalafrah/interview-scheduler/blob/master/docs/deleting.png)
 
 
 
